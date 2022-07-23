@@ -11,3 +11,33 @@
 // user will finally be taken to the highscores page that has the previous quiz results.
 
 // Assign variables 
+var timeEl = document.querySelector(".timer");
+var history = document.querySelector(".history");
+
+// Setting the countdown
+var countDown = 60
+
+function setTimer() {
+    var timerInt = setInterval(function() {
+      countDown--;
+      timeEl.textContent = "Timer: " + countDown;
+
+      if(countDown === 0) {
+        clearInterval(timerInt);
+        // Calls function that is the end game 
+        gameOver();
+      }
+
+    }, 1000);
+  }
+setTimer();
+
+//   function gameOver() {
+//     timeEl.textContent = " ";
+//     var imgEl = document.createElement("img");
+//     imgEl.setAttribute("src", "images/image_1.jpg");
+//     history.appendChild(imgEl);
+  
+//   }
+  
+//   setTimer();
