@@ -13,16 +13,46 @@
 // Assign variables 
 var timeEl = document.querySelector(".timer");
 var highscores = document.querySelector(".highscores");
+var choice1 = document.querySelector("#button1");
+var choice2 = document.querySelector("#button2");
+var choice3 = document.querySelector("#button3");
+var choice4 = document.querySelector("#button4");
+var questionTitle = document.querySelector(".title");
+var question = document.querySelector("#question");
+
+// global variables
+var countDown= 60;
+
+// setting up the start button
+function choice1Btn(){
+    questionTitle.textContent = "Question 1";
+    question.textContent = "this is the first question";
+    question.style.fontSize = "50px";
+    choice1.textContent = "choice one";
+    choice2.style.visibility = "visible";
+    choice3.style.visibility = "visible";
+    choice4.style.visibility = "visible";
+
+}
+
+// making <p> tag invisible
+// function hidePara(){
+//     var removePara = document.getElementById('intro');
+//     if (removePara.style.visibility=='visible') {
+//         removePara.style.visibility= 'hidden';
+//     }
+//     else
+//         removePara.style.visibility='visible'
+// }
+
 
 // Setting the countdown
-var countDown = 60
-
 function setTimer() {
     var timerInt = setInterval(function() {
       countDown--;
       timeEl.textContent = "Timer: " + countDown;
 
-      if(countDown === 0) {
+      if(countDown <= 0) {
         clearInterval(timerInt);
         // Calls function that is the end game 
         gameOver();

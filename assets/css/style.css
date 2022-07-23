@@ -19,15 +19,36 @@
     font-size: 36px;
 }
 
-p {
+#question {
     display: flex;
     justify-content: center;
     text-align: center;
     margin: 0 30%;
 }
 
-.button1 {
-    margin: 5% 0 0 43%;
+#button1 {
+    margin: 2% 0 0 43%;
+    border-color: aqua ;
+    padding: 10px 60px;
+    background-color: aliceblue;
+}
+#button2 {
+    display: none;
+    margin: 1% 0 0 43%;
+    border-color: aqua ;
+    padding: 10px 60px;
+    background-color: aliceblue;
+}
+#button3 {
+    display: none;
+    margin: 1% 0 0 43%;
+    border-color: aqua ;
+    padding: 10px 60px;
+    background-color: aliceblue;
+}
+#button4 {
+    display: none;
+    margin: 1% 0 0 43%;
     border-color: aqua ;
     padding: 10px 60px;
     background-color: aliceblue;
