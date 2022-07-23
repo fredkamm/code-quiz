@@ -12,7 +12,7 @@
 
 // Assign variables 
 var timeEl = document.querySelector(".timer");
-var history = document.querySelector(".history");
+var highscores = document.querySelector(".highscores");
 
 // Setting the countdown
 var countDown = 60

@@ -1,0 +1,34 @@
+/* positioning the timer and highscores icon on the top on the page */
+.timer {
+    display: inline;
+    justify-content: flex-start;
+    margin-left: 80%;
+    font-size: 20px;
+}
+
+.highscores {
+    display: inline; 
+    justify-content: flex-start; 
+    font-size: 20px;
+    top: 0;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 30%;
+}
+
+.button1 {
+    margin: 5% 0 0 43%;
+    border-color: aqua ;
+    padding: 10px 60px;
+    background-color: aliceblue;
+}
