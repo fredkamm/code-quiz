@@ -13,15 +13,14 @@
 // Assign variables 
 var timeEl = document.querySelector(".timer");
 var highscores = document.querySelector(".highscores");
-// var choice1 = document.querySelector("#button1");
-// var choice2 = document.querySelector("#button2");
-// var choice3 = document.querySelector("#button3");
-// var choice4 = document.querySelector("#button4");
 var questionTitle = document.querySelector(".title");
 var question = document.querySelector("#question");
 
 // New button elements
-var buttonTwo = document.createElement("button");
+var choice1 = document.createElement("button");
+var choice2 = document.createElement("button");
+var choice3 = document.createElement("button");
+var choice4 = document.createElement("button");
 
 
 // global variables
@@ -44,8 +43,7 @@ var buttonTwo = document.createElement("button");
 // console.log(buttonTwo)
 
 // Setting the countdown
-// function setTimer() {
-
+// used activity 09 to help get this right
 document.getElementById('button1').addEventListener('click', function (){
   var countDown = 60;
 
@@ -69,28 +67,36 @@ function questionOne(){
   questionTitle.textContent = "Question 1";
   question.textContent = "this is the first question";
   question.style.fontSize = "50px";
+  document.body.appendChild(choice1);
+  choice1.textContent = "Choice 1";
+  document.body.appendChild(choice2);
+  choice2.textContent = "Choice 2";
+  document.body.appendChild(choice3);
+  choice3.textContent = "Choice 3";
+  document.body.appendChild(choice4);
+  choice4.textContent = "Choice 4";
 }
 
 function questionTwo() {
-  questionTitle.textContent = "Question 1";
+  questionTitle.textContent = "Question 2";
   question.textContent = "this is the first question";
   question.style.fontSize = "50px";
 }
 
 function questionThree() {
-  questionTitle.textContent = "Question 1";
+  questionTitle.textContent = "Question 3";
   question.textContent = "this is the first question";
   question.style.fontSize = "50px";
 }
 
 function questionFour() {
-  questionTitle.textContent = "Question 1";
+  questionTitle.textContent = "Question 4";
   question.textContent = "this is the first question";
   question.style.fontSize = "50px";
 }
 
 function questionFive() {
-  questionTitle.textContent = "Question 1";
+  questionTitle.textContent = "Question 5";
   question.textContent = "this is the first question";
   question.style.fontSize = "50px";
 }
