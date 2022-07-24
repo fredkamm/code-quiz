@@ -52,12 +52,10 @@ document.getElementById('button1').addEventListener('click', function (){
   var timerInt = setInterval(function() {
     countDown--;
     timeEl.textContent = "Timer: " + countDown;
-    questionTitle.textContent = "Question 1";
-    question.textContent = "this is the first question";
-    question.style.fontSize = "50px";
-    choice1.textContent = "choice one";
+    questionOne();
+    
 
-    if(countDown <= 0) {
+    if(countDown === 0) {
       clearInterval(timerInt);
       // Calls function that is the end game 
       gameOver();
@@ -66,7 +64,38 @@ document.getElementById('button1').addEventListener('click', function (){
   }, 1000);
 });
 
-// 
+// Function for the questions
+function questionOne(){
+  questionTitle.textContent = "Question 1";
+  question.textContent = "this is the first question";
+  question.style.fontSize = "50px";
+}
+
+function questionTwo() {
+  questionTitle.textContent = "Question 1";
+  question.textContent = "this is the first question";
+  question.style.fontSize = "50px";
+}
+
+function questionThree() {
+  questionTitle.textContent = "Question 1";
+  question.textContent = "this is the first question";
+  question.style.fontSize = "50px";
+}
+
+function questionFour() {
+  questionTitle.textContent = "Question 1";
+  question.textContent = "this is the first question";
+  question.style.fontSize = "50px";
+}
+
+function questionFive() {
+  questionTitle.textContent = "Question 1";
+  question.textContent = "this is the first question";
+  question.style.fontSize = "50px";
+}
+
+// function to create the game over screen;
 function gameOver() {
     questionTitle.textContent = "Quiz is over!";
     question.textContent = "time: 0";
