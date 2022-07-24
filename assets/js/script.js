@@ -1,6 +1,6 @@
 //Psuedocode:
 
-// user will be desplayed a welcome message and brief description of the quiz along with a start button
+// user will be desplayed a main page with a brief description of the quiz along with a start button
 // user will click the start button to proceed to the quiz
 //  once start button is clicked; the timer will begin to countdown to 0 along with displaying the first question of the quiz
 // the question will display 4 choiced that act as buttons 
@@ -13,61 +13,64 @@
 // Assign variables 
 var timeEl = document.querySelector(".timer");
 var highscores = document.querySelector(".highscores");
-var choice1 = document.querySelector("#button1");
-var choice2 = document.querySelector("#button2");
-var choice3 = document.querySelector("#button3");
-var choice4 = document.querySelector("#button4");
+// var choice1 = document.querySelector("#button1");
+// var choice2 = document.querySelector("#button2");
+// var choice3 = document.querySelector("#button3");
+// var choice4 = document.querySelector("#button4");
 var questionTitle = document.querySelector(".title");
 var question = document.querySelector("#question");
 
+// New button elements
+var buttonTwo = document.createElement("button");
+
+
 // global variables
-var countDown= 60;
+// var countDown= 60;
 
 // setting up the start button
-function choice1Btn(){
+// // when start quiz button is clicked, question 1 appears with choices and timer will begin.
+// function choice1Btn(){
+//     questionTitle.textContent = "Question 1";
+//     question.textContent = "this is the first question";
+//     question.style.fontSize = "50px";
+//     choice1.textContent = "choice one";
+//     buttonTwo.textContent = "choice two";
+//     document.body[1].appendChild(buttonTwo);
+//     // choice2.style.visibility = "visible";
+//     // choice3.style.visibility = "visible";
+//     // choice4.style.visibility = "visible";
+// }
+
+// console.log(buttonTwo)
+
+// Setting the countdown
+// function setTimer() {
+
+document.getElementById('button1').addEventListener('click', function (){
+  var countDown = 60;
+
+  var timerInt = setInterval(function() {
+    countDown--;
+    timeEl.textContent = "Timer: " + countDown;
     questionTitle.textContent = "Question 1";
     question.textContent = "this is the first question";
     question.style.fontSize = "50px";
     choice1.textContent = "choice one";
-    choice2.style.visibility = "visible";
-    choice3.style.visibility = "visible";
-    choice4.style.visibility = "visible";
 
-}
+    if(countDown <= 0) {
+      clearInterval(timerInt);
+      // Calls function that is the end game 
+      gameOver();
+    }
 
-// making <p> tag invisible
-// function hidePara(){
-//     var removePara = document.getElementById('intro');
-//     if (removePara.style.visibility=='visible') {
-//         removePara.style.visibility= 'hidden';
-//     }
-//     else
-//         removePara.style.visibility='visible'
-// }
+  }, 1000);
+});
 
-
-// Setting the countdown
-function setTimer() {
-    var timerInt = setInterval(function() {
-      countDown--;
-      timeEl.textContent = "Timer: " + countDown;
-
-      if(countDown <= 0) {
-        clearInterval(timerInt);
-        // Calls function that is the end game 
-        gameOver();
-      }
-
-    }, 1000);
+// 
+function gameOver() {
+    questionTitle.textContent = "Quiz is over!";
+    question.textContent = "time: 0";
+    question.style.fontSize = "21px";
   }
-setTimer();
-
-//   function gameOver() {
-//     timeEl.textContent = " ";
-//     var imgEl = document.createElement("img");
-//     imgEl.setAttribute("src", "images/image_1.jpg");
-//     history.appendChild(imgEl);
   
-//   }
-  
-//   setTimer();
+  setTimer();

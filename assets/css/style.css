@@ -2,7 +2,7 @@
 .timer {
     display: inline;
     justify-content: flex-start;
-    margin-left: 80%;
+    margin-left: 70%;
     font-size: 20px;
 }
 
@@ -26,29 +26,8 @@
     margin: 0 30%;
 }
 
-#button1 {
+button {
     margin: 2% 0 0 43%;
-    border-color: aqua ;
-    padding: 10px 60px;
-    background-color: aliceblue;
-}
-#button2 {
-    display: none;
-    margin: 1% 0 0 43%;
-    border-color: aqua ;
-    padding: 10px 60px;
-    background-color: aliceblue;
-}
-#button3 {
-    display: none;
-    margin: 1% 0 0 43%;
-    border-color: aqua ;
-    padding: 10px 60px;
-    background-color: aliceblue;
-}
-#button4 {
-    display: none;
-    margin: 1% 0 0 43%;
     border-color: aqua ;
     padding: 10px 60px;
     background-color: aliceblue;
