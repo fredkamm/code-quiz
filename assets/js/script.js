@@ -1,20 +1,43 @@
 //Psuedocode:
+// users will be displayed the home page with a start button
+// when user clicks start button
+// then the timer will begin
+// question one will display along with 4 choices
+  // if user clicks the correct choice
+  // then question 2 will display
+  // if they get choice wrong
+  // then 10 seconds will be deducted from the timer
+  // question two will display along with 2 choices
+  // if user clicks the correct choice
+  // then question 2 will display
+  // if they get choice wrong
+  // then 10 seconds will be deducted from the timer
+  // question three will display along with 2 choices
+  // if user clicks the correct choice
+  // then question 2 will display
+  // if they get choice wrong
+  // then 10 seconds will be deducted from the timer
+  // question four will display along with 2 choices
+  // if user clicks the correct choice
+  // then question 2 will display
+  // if they get choice wrong
+  // then 10 seconds will be deducted from the timer
+// question five will display along with 2 choices
+  // if user clicks the correct choice
+  // then question 2 will display
+  // if they get choice wrong
+  // then 10 seconds will be deducted from the timer
+// if user completes quiz before timer they will be displayed the final screen and the timer will stop
+// user will then enter their name along with their score
+// users will be taken to the high score page
 
-// user will be desplayed a main page with a brief description of the quiz along with a start button
-// user will click the start button to proceed to the quiz
-//  once start button is clicked; the timer will begin to countdown to 0 along with displaying the first question of the quiz
-// the question will display 4 choiced that act as buttons 
-// when user clicks button they will be displayed a message if they correctly chosose the right choice or not; along with proceeding to the next question all at once
-// if the user chose the wrong choice 10 secs will be deducted from the timer
-// user will proceed to the next question; and so on;
-// when the user finds the end of the quiz they will be displayed final results and an opion to enter their name to add to their score.
-// user will finally be taken to the highscores page that has the previous quiz results.
 
 // Assign variables 
 var timeEl = document.querySelector(".timer");
 var highscores = document.querySelector(".highscores");
 var questionTitle = document.querySelector(".title");
 var question = document.querySelector("#question");
+var startButton
 
 // New button elements with id
 var choice1 = document.createElement("button");
@@ -26,15 +49,20 @@ choice3.setAttribute("id", "choiceThree")
 var choice4 = document.createElement("button");
 choice4.setAttribute("id", "choiceFour")
 
+// element that shows the answer
+var showAnswer =document.createElement("div")
+showAnswer.setAttribute('id', 'answer')
+
 // Setting the countdown
 // used activity 09 to help get this right
-document.getElementById('button1').addEventListener('click', function (){
-  var countDown = 60;
+var countDown= 60;
 
+document.getElementById('button1').addEventListener('click', questionOne, setTimer);
+
+function setTimer(){
   var timerInt = setInterval(function() {
     countDown--;
     timeEl.textContent = "Timer: " + countDown;
-    questionOne();
     
 
     if(countDown === 0) {
@@ -44,10 +72,11 @@ document.getElementById('button1').addEventListener('click', function (){
     }
 
   }, 1000);
-});
+}; 
 
 // Functions for the questions
 function questionOne(){
+  setTimer();
   questionTitle.textContent = "Question 1";
   question.textContent = "this is the first question";
   question.style.fontSize = "50px";
@@ -59,6 +88,10 @@ function questionOne(){
   choice3.textContent = "Choice 3";
   document.body.appendChild(choice4);
   choice4.textContent = "Choice 4";
+  choice1.addEventListener('click', questionTwo);
+  choice2.addEventListener('click', questionTwo);
+  choice3.addEventListener('click', questionTwo);
+  choice4.addEventListener('click', questionTwo);
 }
 
 function questionTwo() {
@@ -73,6 +106,10 @@ function questionTwo() {
   choice3.textContent = "Choice 3";
   document.body.appendChild(choice4);
   choice4.textContent = "Choice 4";
+  choice1.addEventListener('click', questionThree);
+  choice2.addEventListener('click', questionThree);
+  choice3.addEventListener('click', questionThree);
+  choice4.addEventListener('click', questionThree);
 }
 
 function questionThree() {
@@ -81,12 +118,16 @@ function questionThree() {
   question.style.fontSize = "50px";
   document.body.appendChild(choice1);
   choice1.textContent = "Choice 1";
+  choice1.addEventListener('click', questionFour);
   document.body.appendChild(choice2);
   choice2.textContent = "Choice 2";
+  choice2.addEventListener('click', questionFour);
   document.body.appendChild(choice3);
   choice3.textContent = "Choice 3";
+  choice3.addEventListener('click', questionFour);
   document.body.appendChild(choice4);
   choice4.textContent = "Choice 4";
+  choice4.addEventListener('click', questionFour);
 }
 
 function questionFour() {
@@ -95,12 +136,16 @@ function questionFour() {
   question.style.fontSize = "50px";
   document.body.appendChild(choice1);
   choice1.textContent = "Choice 1";
+  choice1.addEventListener('click', questionFive);
   document.body.appendChild(choice2);
   choice2.textContent = "Choice 2";
+  choice2.addEventListener('click', questionFive);
   document.body.appendChild(choice3);
   choice3.textContent = "Choice 3";
+  choice3.addEventListener('click', questionFive);
   document.body.appendChild(choice4);
   choice4.textContent = "Choice 4";
+  choice4.addEventListener('click', questionFive);
 }
 
 function questionFive() {
@@ -109,12 +154,16 @@ function questionFive() {
   question.style.fontSize = "50px";
   document.body.appendChild(choice1);
   choice1.textContent = "Choice 1";
+  choice1.addEventListener('click', gameOver);
   document.body.appendChild(choice2);
   choice2.textContent = "Choice 2";
+  choice2.addEventListener('click', gameOver);
   document.body.appendChild(choice3);
   choice3.textContent = "Choice 3";
+  choice3.addEventListener('click', gameOver);
   document.body.appendChild(choice4);
   choice4.textContent = "Choice 4";
+  choice4.addEventListener('click', gameOver);
 }
 
 // function to create the game over screen;
@@ -126,6 +175,5 @@ function gameOver() {
     choice2.style.display = "none";
     choice3.style.display = "none";
     choice4.style.display = "none";
-  }
+}
   
-  setTimer();

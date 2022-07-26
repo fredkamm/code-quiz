@@ -35,3 +35,11 @@ button {
     padding: 10px 60px;
     background-color: aliceblue;
 }
+
+#answer {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid;
+    margin: 15px;
+    opacity: 75%;
+}
