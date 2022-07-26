@@ -37,23 +37,35 @@ var timeEl = document.querySelector(".timer");
 var highscores = document.querySelector(".highscores");
 var questionTitle = document.querySelector(".title");
 var question = document.querySelector("#question");
-var startButton = document.querySelector("#button1")
+var startButton = document.querySelector("#button1");
+
+var timerInt;
+var countDown= 60;
 
 // New button elements for the HTML with ID
 var choice1 = document.createElement("button");
-choice1.setAttribute("id", "choiceOne")
+choice1.setAttribute("id", "choiceOne");
 var choice2 = document.createElement("button");
-choice2.setAttribute("id", "choiceTwo")
+choice2.setAttribute("id", "choiceTwo");
 var choice3 = document.createElement("button");
-choice3.setAttribute("id", "choiceThree")
+choice3.setAttribute("id", "choiceThree");
 var choice4 = document.createElement("button");
-choice4.setAttribute("id", "choiceFour")
+choice4.setAttribute("id", "choiceFour");
 
-// element that shows the answer
-var showAnswer =document.createElement("div")
-showAnswer.setAttribute('id', 'answer')
+var choices = [choice1, choice2, choice3, choice4];
 
-var countDown= 60;
+// created elements that show if the choice is correct
+var correct = document.createElement("p");
+correct.setAttribute("id", "correctChoice");
+var incorrect = document.createElement("p");
+incorrect.setAttribute("id", "incorrectChoice");
+
+// creating the user input element
+var userInput = document.createElement("input");
+userInput.setAttribute("type", "text");
+userInput.setAttribute("id", "userInput")
+
+
 
 // start button that starts the timer 
 startButton.addEventListener('click', questionOne, setTimer);
@@ -61,7 +73,7 @@ startButton.addEventListener('click', questionOne, setTimer);
 // Setting the countdown
 // used activity 09 to help get this right
 function setTimer(){
-  var timerInt = setInterval(function() {
+    timerInt = setInterval(function() {
     countDown--;
     timeEl.textContent = "Timer: " + countDown;
     
@@ -74,18 +86,14 @@ function setTimer(){
   }, 1000);
 }; 
 
-function stopTimer(){
- stop(timerInt);
-}
-
-// Functions for the questions
+// Functions for each displayed questions
 function questionOne(){
   setTimer();
   choiceAppear();
   ques1Choices();
   gotoQuesTwo();
   questionTitle.textContent = "Question 1";
-  question.textContent = "this is the first question";
+  question.textContent = "Which represents the logical OR?";
 }
 
 function questionTwo() {
@@ -93,7 +101,7 @@ function questionTwo() {
   ques2Choices();
   gotoQuesThree();
   questionTitle.textContent = "Question 2";
-  question.textContent = "this is the first question";
+  question.textContent = "The simple assignment operator __ is used to assign a value to a variable.";
   
 }
 
@@ -102,7 +110,7 @@ function questionThree() {
   ques3Choices();
   gotoQuesFour();
   questionTitle.textContent = "Question 3";
-  question.textContent = "this is the first question";
+  question.textContent = "This data tyoer can only have one of two values i.e. true/false";
 }
 
 function questionFour() {
@@ -110,7 +118,7 @@ function questionFour() {
   ques4Choices();
   gotoQuesFive();
   questionTitle.textContent = "Question 4";
-  question.textContent = "this is the first question";
+  question.textContent = "The logical NOT is displayed as:";
 }
 
 function questionFive() {
@@ -118,39 +126,37 @@ function questionFive() {
   ques5Choices();
   gotoGameOver();
   questionTitle.textContent = "Question 5";
-  question.textContent = "this is the first question";
+  question.textContent = "The value ___ represents the intentional absence of any object value.";
 }
 
 // function to create the game over screen;
 function gameOver() {
     questionTitle.textContent = "The Quiz is over!";
     question.textContent =  "Your time: " + countDown;
+    clearInterval(timerInt);
     question.style.fontSize = "21px";
     choicesDisappear();
+    document.body.appendChild(userInput);
 }
-
-
 
 
 // functions that were repeating are below; tried to clean it up above as best as i could
 
-
 // function making choices disappear
 function choicesDisappear(){
-  choice1.style.display = "none";
-  choice2.style.display = "none";
-  choice3.style.display = "none";
-  choice4.style.display = "none";
+  for(var i = 0; i  < choices.length; i++)
+
+    choices[i].style.display = "none";
 }
 
 // function making choices appear
 function choiceAppear(){
-  document.body.appendChild(choice1);
-  document.body.appendChild(choice2);
-  document.body.appendChild(choice3);
-  document.body.appendChild(choice4);
-  question.style.fontSize = "50px";
+  for(var i = 0; i  < choices.length; i++)
+
+  document.body.appendChild(choices[i]);
+  question.style.fontSize = "30px";
 }
+
 // functions that make buttons go to next question
 function gotoQuesTwo(){
   choice1.addEventListener('click', questionTwo);
@@ -185,32 +191,42 @@ function gotoGameOver(){
 
 // function to change the text of the choices
 function ques1Choices(){
-  choice1.textContent = "Choice 1";
-  choice2.textContent = "Choice 2";
-  choice3.textContent = "Choice 3";
-  choice4.textContent = "Choice 4";
+  choice1.textContent = "||";
+  choice2.textContent = "&&";
+  choice3.textContent = "+=";
+  choice4.textContent = "?";
 }
 function ques2Choices(){
-  choice1.textContent = "Choice 1";
-  choice2.textContent = "Choice 2";
-  choice3.textContent = "Choice 3";
-  choice4.textContent = "Choice 4";
+  choice1.textContent = "=";
+  choice2.textContent = "+";
+  choice3.textContent = ";";
+  choice4.textContent = "' '";
 }
 function ques3Choices(){
-  choice1.textContent = "Choice 1";
-  choice2.textContent = "Choice 2";
-  choice3.textContent = "Choice 3";
-  choice4.textContent = "Choice 4";
+  choice1.textContent = "Boolean";
+  choice2.textContent = "String";
+  choice3.textContent = "Number";
+  choice4.textContent = "Array";
 }
 function ques4Choices(){
-  choice1.textContent = "Choice 1";
-  choice2.textContent = "Choice 2";
-  choice3.textContent = "Choice 3";
-  choice4.textContent = "Choice 4";
+  choice1.textContent = "!";
+  choice2.textContent = "1";
+  choice3.textContent = "?";
+  choice4.textContent = "not";
 }
 function ques5Choices(){
-  choice1.textContent = "Choice 1";
-  choice2.textContent = "Choice 2";
-  choice3.textContent = "Choice 3";
-  choice4.textContent = "Choice 4";
+  choice1.textContent = "Null";
+  choice2.textContent = "Nothing";
+  choice3.textContent = "Empty";
+  choice4.textContent = "Anything Else";
+}
+
+function correctChoice(){
+  document.body.appendChild(correct);
+  correct.textCont = "Correct!"
+}
+
+function wrongChoice(){
+  document.body.appendChild(incorrect);
+  incorrect.textCont = "Incorrect!"
 }
