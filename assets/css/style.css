@@ -47,7 +47,20 @@ button {
 }
 
 #userInput {
+    margin-left: 40%;
+    margin-top: 3%;
+}
+
+#submit {
+    margin: 0 10px;
+    border-color: aqua;
+    height: 23px;
+    width: 76px;
+    background-color: aliceblue;
+}
+
+/* Highscores page setup below */
+h1 {
     display: flex;
     justify-content: center;
-    align-items: center;
 }

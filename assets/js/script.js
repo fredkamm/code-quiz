@@ -60,10 +60,17 @@ correct.setAttribute("id", "correctChoice");
 var incorrect = document.createElement("p");
 incorrect.setAttribute("id", "incorrectChoice");
 
+
+
 // creating the user input element
+var submitDiv = document.createElement("div")
+
 var userInput = document.createElement("input");
 userInput.setAttribute("type", "text");
 userInput.setAttribute("id", "userInput")
+
+var submitBtn = document.createElement("button");
+submitBtn.setAttribute("id", "submit");
 
 
 
@@ -136,7 +143,10 @@ function gameOver() {
     clearInterval(timerInt);
     question.style.fontSize = "21px";
     choicesDisappear();
+
     document.body.appendChild(userInput);
+    document.body.appendChild(submitBtn);
+    submitBtn.textContent = ("submit");
 }
 
 
