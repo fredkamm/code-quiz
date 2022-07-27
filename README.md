@@ -6,7 +6,11 @@
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+It all starts with click the start button at the main screen.
+
+md![alt text](./assets/images/Screen%20Shot%202022-07-26%20at%208.07.57%20PM.png)
+
+
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
