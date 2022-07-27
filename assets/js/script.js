@@ -169,7 +169,7 @@ function choiceAppear(){
 
 // functions that make buttons go to next question
 function gotoQuesTwo(){
-  choice1.addEventListener('click', questionTwo);
+  choice1.addEventListener('click', questionTwo, correctChoice);
   choice2.addEventListener('click', questionTwo, wrongChoice);
   choice3.addEventListener('click', questionTwo, wrongChoice);
   choice4.addEventListener('click', questionTwo, wrongChoice);
@@ -240,4 +240,6 @@ function correctChoice(){
 // this works on the clock but i dont know how to apply it to a click on certain buttons
 function wrongChoice(){
   countDown = countDown - 10;
+  document.body.appendChild(incorrect);
+  correct.textCont = "Incorrect!"
 }

@@ -47,6 +47,15 @@ button {
     opacity: 75%;
 }
 
+#incorrectChoice {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid;
+    margin: 15px;
+    opacity: 75%;
+
+}
+
 #userInput {
     margin-left: 40%;
     margin-top: 3%;
