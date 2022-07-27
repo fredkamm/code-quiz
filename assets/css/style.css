@@ -30,11 +30,12 @@
 
 /* the design and position of the buttons */
 button {
+    color: white;
     margin: 1% 0 0 43%;
-    border-color: aqua ;
+    border-color: rgb(170, 41, 170) ;
     height: 40px;
     width: 150px;
-    background-color: aliceblue;
+    background-color: rgb(170, 41, 170);
 }
 
 /* this displays the result of the choice */
@@ -53,10 +54,10 @@ button {
 
 #submit {
     margin: 0 10px;
-    border-color: aqua;
+    border-color: rgb(170, 41, 170);
     height: 23px;
     width: 76px;
-    background-color: aliceblue;
+    background-color: rgb(170, 41, 170);
 }
 
 /* Highscores page setup below */

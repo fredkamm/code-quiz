@@ -170,33 +170,33 @@ function choiceAppear(){
 // functions that make buttons go to next question
 function gotoQuesTwo(){
   choice1.addEventListener('click', questionTwo);
-  choice2.addEventListener('click', questionTwo);
-  choice3.addEventListener('click', questionTwo);
-  choice4.addEventListener('click', questionTwo);
+  choice2.addEventListener('click', questionTwo, wrongChoice);
+  choice3.addEventListener('click', questionTwo, wrongChoice);
+  choice4.addEventListener('click', questionTwo, wrongChoice);
 }
 function gotoQuesThree(){
   choice1.addEventListener('click', questionThree);
-  choice2.addEventListener('click', questionThree);
-  choice3.addEventListener('click', questionThree);
-  choice4.addEventListener('click', questionThree);
+  choice2.addEventListener('click', questionThree, wrongChoice);
+  choice3.addEventListener('click', questionThree, wrongChoice);
+  choice4.addEventListener('click', questionThree, wrongChoice);
 }
 function gotoQuesFour(){
   choice1.addEventListener('click', questionFour);
-  choice2.addEventListener('click', questionFour);
-  choice3.addEventListener('click', questionFour);
-  choice4.addEventListener('click', questionFour);
+  choice2.addEventListener('click', questionFour, wrongChoice);
+  choice3.addEventListener('click', questionFour, wrongChoice);
+  choice4.addEventListener('click', questionFour, wrongChoice);
 }
 function gotoQuesFive(){
   choice1.addEventListener('click', questionFive);
-  choice2.addEventListener('click', questionFive);
-  choice3.addEventListener('click', questionFive);
-  choice4.addEventListener('click', questionFive);
+  choice2.addEventListener('click', questionFive, wrongChoice);
+  choice3.addEventListener('click', questionFive, wrongChoice);
+  choice4.addEventListener('click', questionFive, wrongChoice);
 }
 function gotoGameOver(){
   choice1.addEventListener('click', gameOver);
-  choice2.addEventListener('click', gameOver);
-  choice3.addEventListener('click', gameOver);
-  choice4.addEventListener('click', gameOver);
+  choice2.addEventListener('click', gameOver, wrongChoice);
+  choice3.addEventListener('click', gameOver, wrongChoice);
+  choice4.addEventListener('click', gameOver, wrongChoice);
 }
 
 // function to change the text of the choices
@@ -235,8 +235,9 @@ function correctChoice(){
   document.body.appendChild(correct);
   correct.textCont = "Correct!"
 }
-
+ 
+// subtracting 10 seconds on wrong choice
+// this works on the clock but i dont know how to apply it to a click on certain buttons
 function wrongChoice(){
-  document.body.appendChild(incorrect);
-  incorrect.textCont = "Incorrect!"
+  countDown = countDown - 10;
 }
