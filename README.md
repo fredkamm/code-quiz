@@ -6,30 +6,25 @@
 
 ## Usage
 
-It all starts with click the start button at the main screen.
+It all starts with clicking the start button at the main screen.
 
 md![alt text](./assets/images/Screen%20Shot%202022-07-26%20at%208.07.57%20PM.png)
 
+Timer begins when question 1 is displayed
 
+md![alt text](./assets/images/Screen%20Shot%202022-07-26%20at%208.08.07%20PM.png)
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Eventually if the timer hits 0 or user answers question 5, theyll be taken to the end of the quiz
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+md![alt text](./assets/images/Screen%20Shot%202022-07-26%20at%208.08.24%20PM.png)
+
+They can visit a highscores page using the link in the top left corner.
+
+md![alt text](./assets/images/Screen%20Shot%202022-07-26%20at%208.08.38%20PM.png)
+
 
 ## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
-
-## Features
-
-If your project has a lot of features, list them here.
+Student (github: fredkk22) gave me the idea to create a second html page in order to view the highscores
 
 ## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+Deployed site: https://fredkamm.github.io/code-quiz/
